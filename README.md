@@ -24,5 +24,12 @@ Le schéma ci-dessous illustre cette architecture :
 
 ## Structure du projet
 
-La structure du projet est organisée comme suit :
-![alt text](image.png)
+├── airflow/ # DAGs et configuration d'Airflow
+├── airbyte/ # Configuration des connecteurs Airbyte
+├── dbt/ # Projet dbt avec modèles Bronze / Silver / Gold
+├── recommendation/ # Script de recommandation mentor/mentoré
+├── data/ # Fichiers de données simulées (PostgreSQL)
+├── notebooks/ # Analyses exploratoires et POC en Jupyter
+├── dashboards/ # Captures ou exports des visualisations
+├── docker-compose.yml # Lancement des services en local
+└── README.md # Documentation du projet
