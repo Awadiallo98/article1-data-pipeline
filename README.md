@@ -22,6 +22,7 @@ Le schéma ci-dessous illustre cette architecture :
 
 ![data-pipeline-architecture-article1  drawio](https://github.com/user-attachments/assets/9680f0bd-e15c-42ee-a4ce-67e432774a29)
 
-
 ## Structure du projet
 
+La structure du projet est organisée comme suit :
+![alt text](image.png)
