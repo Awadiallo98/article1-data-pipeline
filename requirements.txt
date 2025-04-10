@@ -1,0 +1,18 @@
+# Base Python
+pandas
+numpy
+
+# Connexion DB
+psycopg2-binary
+
+# dbt core (transformation)
+dbt-core
+dbt-postgres
+
+# Notebook ML
+notebook
+scikit-learn
+
+# Optionnel pour MLFlow ou API plus tard
+# mlflow
+# fastapi

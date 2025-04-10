@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: article1_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: article1
+      POSTGRES_PASSWORD: article1test2025
+      POSTGRES_DB: article1_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - ./pgdata:/var/lib/postgresql/data
+      - ./postgres-config/postgresql.conf:/etc/postgresql/postgresql.conf
+    command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    networks:
+      - article1_network
+      - host_network
+
+networks:
+  host_network:
+    driver: bridge
+  article1_network:
+    external: true

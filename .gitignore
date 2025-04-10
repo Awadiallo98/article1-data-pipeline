@@ -1,0 +1,9 @@
+.env
+
+
+data
+
+pgdata
+
+# Ignore logs airflow
+airflow/logs/

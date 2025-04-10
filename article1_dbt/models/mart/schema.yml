@@ -1,0 +1,30 @@
+version: 2
+
+description: >
+  Ce modèle mart permet d’analyser, par mentor (bv_id) et par mois (date_proposition),
+  le nombre de recommandations terminées (acceptées) ou refusées.
+  Il s’appuie sur les données de la table stg_binomes.
+
+models:
+  - name: mart_recos_par_mentor_et_mois
+    description: "Modèle simple : agrège les recos acceptées et refusées par mentor et par mois."
+    columns:
+      - name: bv_id
+        description: "ID du mentor (bénévole)"
+        tests:
+          - not_null
+
+      - name: mois_recommandation
+        description: "Mois de la recommandation (tronqué à MONTH)"
+        tests:
+          - not_null
+
+      - name: nb_acceptees
+        description: "Nombre de recommandations acceptées pour ce mentor et ce mois"
+        tests:
+          - not_null
+
+      - name: nb_refusees
+        description: "Nombre de recommandations refusées pour ce mentor et ce mois"
+        tests:
+          - not_null

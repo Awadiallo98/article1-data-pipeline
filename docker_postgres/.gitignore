@@ -1,0 +1,8 @@
+.env
+
+# Ignore the json article1-data-pipeline
+
+article1-data-pipeline.json
+
+# Ignore postgresql config files
+postgresql.conf

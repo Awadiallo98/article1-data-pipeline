@@ -1,0 +1,14 @@
+article1_dbt:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: article1-data-pipeline
+      dataset: article1_dbt
+      threads: 1
+      location: EU
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      priority: interactive
+  target: dev

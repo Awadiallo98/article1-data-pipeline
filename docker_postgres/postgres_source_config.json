@@ -1,0 +1,34 @@
+{
+    "sourceDefinitionId": "d6727762-5868-4c88-a8d5-4a19cfa220d9",
+    "name": "Article1-PostgreSQL",
+    "workspaceId": "34547888-69d8-4597-b2f3-b9d6b8ee92bf",
+    "connectionConfiguration": {
+      "host": "postgres",
+      "port": 5432,
+      "database": "article1_db",
+      "schemas": ["public"],
+      "username": "article1",
+      "password": "*******",
+      "ssl": false,
+      "replication_method": {
+        "method": "CDC",
+        "replication_slot": null,
+        "publication": null,
+        "initial_waiting_seconds": 300,
+        "queue_size": null,
+        "lsn_commit_behaviour": "After loading Data in the destination",
+        "heartbeat_seconds": null,
+        "invalid_cdc_position_behavior": "Fail sync",
+        "initial_load_timeout_hours": null
+      },
+      "tunnel_method": {
+        "tunnel_method": "NO_TUNNEL"
+      },
+      "ssl_mode": {
+        "mode": "disable"
+      },
+      "jdbc_url_params": ""
+    },
+    "sourceName": "PostgreSQL"
+  }
+  

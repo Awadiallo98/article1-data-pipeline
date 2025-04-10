@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: airbyte # nom de la source Airbyte
+    schema: article1_dataset # dataset BigQuery où Airbyte charge les données
+    description: "Sources chargées via Airbyte dans BigQuery"
+    tables:
+      - name: benevoles
+        description: "Table brute des bénévoles extraite par Airbyte"
+      - name: binomes
+        description: "Table brute des binômes extraite par Airbyte"
+      - name: jeunes
+        description: "Table brute des jeunes extraite par Airbyte"
+
+models:
+  - name: raw_benevoles
+    description: "Copie de la source benevoles en table, sans transformation"
+  - name: raw_binomes
+    description: "Copie de la source binomes en table, sans transformation"
+  - name: raw_jeunes
+    description: "Copie de la source jeunes en table, sans transformation"

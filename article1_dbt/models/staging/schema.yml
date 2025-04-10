@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: stg_benevoles
+    description: "Données nettoyées des bénévoles"
+    columns:
+      - name: bv_id
+        description: "Identifiant unique du bénévole"
+        tests:
+          - not_null
+          - unique
+
+      - name: utilisateur_id
+        description: "ID utilisateur relié"
+        tests:
+          - not_null
+
+      - name: age
+        description: "Âge (brut ou calculé)"
+
+      - name: statut
+        description: "Statut actuel du bénévole"
+        tests:
+          - accepted_values:
+              values:
+                - ACTIF
+                - ANNULE
+                - NON_DISPONIBLE
+              config:
+                severity: warn
+
+  - name: stg_binomes
+    description: "Données nettoyées des binômes entre jeunes et bénévoles"
+    columns:
+      - name: b_id
+        description: "ID unique du binôme"
+        tests:
+          - not_null
+          - unique
+
+      - name: bv_id
+        description: "ID du bénévole"
+        tests:
+          - not_null
+
+      - name: j_id
+        description: "ID du jeune"
+        tests:
+          - not_null
+
+      - name: statut
+        description: "Statut de la recommandation"
+        tests:
+          - accepted_values:
+              values:
+                - ACCEPTE
+                - REFUSE
+                - EN_ATTENTE
+                - ANNULE
+              config:
+                severity: warn
+
+  - name: stg_jeunes
+    description: "Données de staging pour les jeunes mentorés"
+    columns:
+      - name: j_id
+        description: "Identifiant unique du jeune"
+        tests:
+          - not_null
+          - unique
+
+      - name: statut
+        description: "Statut du jeune"
+        tests:
+          - accepted_values:
+              values:
+                - ACTIF
+                - ANNULE
+                - NON_DISPONIBLE
+                - EN_ATTENTE_ACTIVATION
+                - EN_COURS_INSCRIPTION
+                - APPROUVE
+                - EN_ATTENTE_VALIDATION
+                - REFUSE
+                - ASSOCIE PARCOURS
+                - EN ATTENTE PARENT
+                - HORS PROGRAMME
+                - MATCHE
+                - NON RENSEIGNÉ
+                - SORTI
+              config:
+                severity: warn
+
+      - name: date_inscription
+        description: "Date d'inscription du jeune"
+
+      - name: a_ete_mentore
+        description: "Indique si le jeune a déjà été mentoré"
+
+      - name: besoins
+        description: "Besoins exprimés (ex: pro, study, etc.)"
